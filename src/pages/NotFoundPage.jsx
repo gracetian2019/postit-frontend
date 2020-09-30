@@ -8,7 +8,7 @@ class NotFoundPage extends React.Component{
 
             <p style={{textAlign:"center"}}>
              It looks like you're lost...
-            <Link to="/">Go to Home </Link>
+            <Link to="/welcome">Go to Home </Link>
             </p>
           </div>;
     }

@@ -30,22 +30,41 @@ class PostCard extends React.Component {
        let {title, content, created_at, author_name, likes, comments, id} = this.props.post
   
       return (
-        <div className="post-card" >
+        <div >
+          <div className="post-card-div" >
+
             <div onClick={this.handleClick}>
-              <Link to={`/mainpage/${id}`}>
-              <p>Advice: <strong>{title} </strong> </p>
+
+              <Link className="post-title" to={`/mainpage/${id}`}>
+                <h2>{title}</h2>
               </Link>
-              <p>Content:<strong>{content}</strong></p>
-              <p>Posted by | <span>{author_name}</span> | {this.timeCacu(created_at)} ago</p>
-            <div>
-              <span>This post has <Emoji label="panada" symbol="✨"/> {comments.length} Comments </span> 
-            <div >
-              <button onClick={() => {this.props.likeNum(id)}}><Emoji label="panada" symbol="👍"/> <span>{likes}LIKE</span></button>
-            </div>
-            </div>
-              {this.props.children}
+              
+              <p>{content}</p>
+
+              <p> <span>{author_name}</span> | {this.timeCacu(created_at)} ago</p>
+
+              <div className="like-cmt-wrapper">
+                <div>
+                  <p>This post has <Emoji label="panada" symbol="✨"/> {comments.length > 1 ? <span>{comments.length} Comments</span> : <span>{comments.length} Comment </span> }</p>
+                  <div >
+                  <button className="like-btn" onClick={() => {this.props.likeNum(id)}}><Emoji label="panada" symbol="👍"/> {likes > 1 ? <span>{likes} Likes</span> : <span>{likes} Like</span>}</button>
+                </div>
+                </div>
+              </div >
+
             </div> 
+
+          </div>
+
+          <div className="cmt-child">
+            {this.props.children}
+          </div>
+
         </div>
+
+          
+            
+
       )
     }
   }

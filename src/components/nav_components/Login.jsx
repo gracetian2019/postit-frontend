@@ -1,4 +1,5 @@
 import React from 'react';
+import{ NavLink } from 'react-router-dom';
 
 class Login extends React.Component{
      state={
@@ -36,16 +37,19 @@ class Login extends React.Component{
 
     render(){
     return (
-        <div>
+        <div className="login-div">
 
-            <h1>Log in</h1>
+            <h1>Welcome to PostIt</h1>
+            <p>Write inspiration post and comment to encourage people</p>
             <form onSubmit={this.handleSubmit}>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Username*</label>
             <input type="text" autoComplete="off" value={this.state.username} onChange={this.handleChange}name="username"/>
-            <label htmlFor="password">Password:</label>
+            <label className="password-label" htmlFor="password">Password*</label>
             <input type="password" autoComplete="off" value={this.state.password} onChange={this.handleChange} name="password"/>
-            <button type="submit">Log in</button>
+            <button className="signup nav-btn login-2-btn" type="submit">Log in</button>
             </form>
+            <h3>New to PostIt?</h3>
+            <NavLink className="nav-link" to='/signup' ><p>Create an Account</p></NavLink>
         </div>
     )
 }

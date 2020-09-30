@@ -37,15 +37,19 @@ class Signup extends React.Component{
     render(){
     return (
         
-        <div>
-            <h1>Sign up</h1>
+        <div className="sign-up-wrapper">
+            <h1>Sign up Here</h1>
+            
             <form onSubmit={this.handleSubmit}>
-            <label htmlFor="username">Username:</label>
-            <input type="text" autoComplete="off" value={this.state.username} onChange={this.handleChange} name="username" placeholder="username"/>
-            <label htmlFor="password">Password:</label>
-            <input type="password" autoComplete="off" value={this.state.password} onChange={this.handleChange}name="password" placeholder="password"/>
-             <p>Your information is safe with us!</p>
-             <button type="submit">Sign up</button>
+            <div className="signup-form">
+            <label htmlFor="username">Username*</label>
+            <input className="username-input" type="text" autoComplete="off" value={this.state.username} onChange={this.handleChange} name="username" placeholder="username" />
+            <label htmlFor="password">Password*</label>
+            <input className="username-input" type="password" autoComplete="off" value={this.state.password} onChange={this.handleChange}name="password" placeholder="password"/>
+            </div>
+            
+             <p className="signup-text">Write inspiration post and comment to encourage people</p>
+             <button className="nav-btn signup signup-btn" type="submit">Sign up</button>
              </form>
         </div>
     )

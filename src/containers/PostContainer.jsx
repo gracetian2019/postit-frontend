@@ -3,12 +3,10 @@ import PostCard from '../components/post_components/PostCard';
 import CommentsContainer from './CommentsContainer'
 import NewPostForm from '../components/post_components/NewPostForm';
 import Loader from '../components/help_components/Loader';
-
 import  { Link, Route, Switch, Redirect } from 'react-router-dom';
 
 
 class PostContainer extends React.Component{
-
   state ={
     posts: [], 
     loading: true
@@ -145,7 +143,7 @@ class PostContainer extends React.Component{
     
           return(
             <div>    
-              <Link to='/mainpage'><label className="go-back-label" onClick={this.goBackToPosts}>home</label></Link>     
+              <Link className="nav-link" to='/mainpage'><label className="go-back-label" onClick={this.goBackToPosts}>Go Back</label></Link>     
               <PostCard likeNum={this.likeNum}  post={getPost}>
                 <CommentsContainer  
                   deleteComment={ this.deleteComment} 
@@ -165,7 +163,7 @@ class PostContainer extends React.Component{
               {this.props.currentUser ? ( 
                 <div className="new-post-form-container">
                 {/* {console.log(this.props)} */}
-                <h3>Write your own advice</h3>
+                <h1 className="new-post-headline">Share your feelings</h1>
                 <NewPostForm 
                   newPostState={this.newPostState} 
                   currentUser={this.props.currentUser}/>

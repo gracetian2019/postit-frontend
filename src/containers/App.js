@@ -3,10 +3,12 @@ import '../App.css';
 import NavBar from './NavBar';
 import Login from '../components/nav_components/Login';
 import Signup from '../components/nav_components/Signup';
-import CourageContainer from './CourageContainer';
+//import CourageContainer from './CourageContainer';
 import MainContainer from './MainContainer';
 import NotFoundPage from '../pages/NotFoundPage.jsx';
 import WelcomePage from '../pages/WelcomePage.jsx';
+//import AboutPage from '../pages/AboutPage.jsx';
+//import FooterPage from '../pages/FooterPage.jsx';
 
 import { Route, Switch,Redirect } from 'react-router-dom';
 
@@ -58,14 +60,16 @@ class App extends Component {
           <Route path='/signup' render={()=><Signup setUser={this.setUser}/>} />
           <Route path='/mainpage' render={(routerProps)=> 
           <div>
-          <CourageContainer />
+          {/* <CourageContainer /> */}
           <MainContainer view = { this.state.view } searchTerm = { this.state.searchTerm } routerProps={routerProps} currentUser={this.state.currentUser}/> 
           </div>
           }/>
           <Route exact path='/welcome' render={()=><WelcomePage />} />
+          {/* <Route exact path='/about' render={()=><AboutPage />} /> */}
           <Route path="/404" render={()=><NotFoundPage />}/>
           <Redirect to="/404" />
           </Switch>
+          {/* <FooterPage /> */}
         </div>
       );
   }

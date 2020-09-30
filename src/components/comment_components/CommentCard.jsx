@@ -1,5 +1,5 @@
 import React from 'react';
-import Emoji from '../help_components/Emoji'
+import Emoji from '../help_components/Emoji';
 
 function CommentCard(props){
 
@@ -31,8 +31,9 @@ function CommentCard(props){
 
   return (
     <div className="comment-card">
-        <p>{content}</p>
-        <span> {username} <Emoji label="panada" symbol="🐼"/> Commented <Emoji label="panada" symbol="🔊"/>{timeCacu(created_at)} ago</span>
+        <h3 className="content-cmt">{content}</h3>
+        <span > <span className="username-icon">{username} </span> <span className="user-icon"><Emoji  label="panada" symbol="🐼"/>Commented</span>  <Emoji label="panada" symbol="🔊"/>{timeCacu(created_at)} ago</span>
+        {/* <span > {username} <Emoji className="user-icon" label="panada" symbol="🐼"/> Commented <Emoji label="panada" symbol="🔊"/>{timeCacu(created_at)} ago</span> */}
         {displayDeleteButton()}
     </div>
   )

@@ -6,9 +6,14 @@ function WelcomePage() {
 
     return(
         <div>
-          This is Home page
+
            <CourageContainer />
-           <Link to='/mainpage'><label>Read More and leave your comment</label></Link>
+           <div className="home-page-cmt-box" >
+               <div className="home-page-cmt-text">
+               <Link className="nav-link" to='/mainpage'><label>Share your thoughts with us.We'd love to listen! :)</label></Link>
+               </div>
+           
+           </div>
         </div>
     );
 
