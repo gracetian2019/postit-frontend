@@ -6,16 +6,12 @@ import { NavLink} from 'react-router-dom';
 
 function UserFiles(props){
  
-
-  const options=[{key: 'user', text:'Profile'},
-  {key: 'mainpage', text:'Main Page'}
-]
   return (
     <div className="user-files">
-      {props.currentUser && <NavLink to='/mainpage'><button className="user-btn">{props.currentUser.username.toUpperCase()}</button></NavLink>}
+      {props.currentUser && <NavLink to='/userprofile'><button className="user-btn">{props.currentUser.username.toUpperCase()}</button></NavLink>}
       
       { !props.currentUser?
-     <NavLink className="nav-link" to='/login' > <button className="nav-btn login"><Emoji  label="panada" symbol="📝"/>Write</button></NavLink>
+     <NavLink className="nav-link" to='/login' > <button className="nav-btn login"><Emoji className="write-emoji" label="write" symbol="📝"/>Write</button></NavLink>
      : <button className="nav-btn"  onClick={props.logout}>Log out</button>
       }
        

@@ -67,7 +67,7 @@ class NewPostForm extends React.Component{
         <label htmlFor='title'>Feeling:</label>
         <textarea className="feeling-input"type='text' name='title' value={this.state.title}  onChange={this.handleChange} />
         <label className="content-label"htmlFor='content'>Content:</label>
-        <textarea className="content-input"type='text' name='content' value={this.state.content}  onChange={this.handleChange}/>
+        <textarea className="content-input"type='text' name='content' value={this.state.content}  onChange={this.handleChange} />
         <input className="feeling-submit-btn nav-btn"type="submit" value="Submit" />
         </form>
         </div>

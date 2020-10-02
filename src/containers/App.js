@@ -7,6 +7,7 @@ import Signup from '../components/nav_components/Signup';
 import MainContainer from './MainContainer';
 import NotFoundPage from '../pages/NotFoundPage.jsx';
 import WelcomePage from '../pages/WelcomePage.jsx';
+import UserProfileContainer from './UserProfileContainer'
 //import AboutPage from '../pages/AboutPage.jsx';
 //import FooterPage from '../pages/FooterPage.jsx';
 
@@ -65,6 +66,7 @@ class App extends Component {
           </div>
           }/>
           <Route exact path='/welcome' render={()=><WelcomePage />} />
+          <Route exact path='/userprofile' render={(routerProps)=><UserProfileContainer routerProps={routerProps} currentUser={this.state.currentUser} />} />
           {/* <Route exact path='/about' render={()=><AboutPage />} /> */}
           <Route path="/404" render={()=><NotFoundPage />}/>
           <Redirect to="/404" />

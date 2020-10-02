@@ -54,7 +54,7 @@ class NewCommentForm extends React.Component{
     //console.log("newComment",this.props.currentUser)
     return (
       <div className="comment-form">
-        <textarea onChange={this.handleChange} name="content" value={this.state.content} placeholder="say something nice to this wisdom advisor" />
+        <textarea onChange={this.handleChange} name="content" value={this.state.content} placeholder="say something nice to this wisdom writer" />
         <div className="">
           <button className="signup cmt-btn" onClick={this.handleSubmit}>Comment</button>
         </div>

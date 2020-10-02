@@ -39,7 +39,7 @@ class PostCard extends React.Component {
                 <h2>{title}</h2>
               </Link>
               
-              <p>{content}</p>
+              <p className="content-text">{content}</p>
 
               <p> <span>{author_name}</span> | {this.timeCacu(created_at)} ago</p>
 

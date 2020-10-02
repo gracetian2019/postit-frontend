@@ -36,9 +36,12 @@ class Signup extends React.Component{
 
     render(){
     return (
+        <div className="signup-wrapper">
+
         
-        <div className="sign-up-wrapper">
-            <h1>Sign up Here</h1>
+        <div className="sign-up-div">
+        
+            <h1 className="signup-title">Sign up Here</h1>
             
             <form onSubmit={this.handleSubmit}>
             <div className="signup-form">
@@ -48,9 +51,10 @@ class Signup extends React.Component{
             <input className="username-input" type="password" autoComplete="off" value={this.state.password} onChange={this.handleChange}name="password" placeholder="password"/>
             </div>
             
-             <p className="signup-text">Write inspiration post and comment to encourage people</p>
+             <p className="signup-text">Motivate yourself and others from now on!</p>
              <button className="nav-btn signup signup-btn" type="submit">Sign up</button>
              </form>
+        </div>
         </div>
     )
   }

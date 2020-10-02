@@ -22,7 +22,7 @@ function CommentCard(props){
   function displayDeleteButton(){
     if(props.currentUser && props.currentUser.id === user_id ) {
       //console.log( "commentcard", props.currentUser)
-      return <button onClick={() => {props.deleteComment(post_id, id)}}>Delete</button>
+      return <span className="delete-label"><label onClick={() => {props.deleteComment(post_id, id)}}>Delete</label></span>
     }
   }
  
